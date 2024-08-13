@@ -1,0 +1,17 @@
+defaults: &defaults
+
+  geo_service_providers:
+    default: ipstack
+
+    ipstack:
+      api_url: "https://api.ipstack.com/%s?access_key=%s"
+      api_access_key: "b468b901cb7ba1b24176f73d1c86f299"
+      adapter: IpstackAdapter
+
+development:
+  <<: *defaults
+
+production:
+  <<: *defaults
+
+
