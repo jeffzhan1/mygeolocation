@@ -8,10 +8,6 @@ class GeolocationServiceProvider
     def adapt(ip_address, input)
       result = JSON.parse(input)
 
-
-byebug
-
-
       geolocation_params = get_geolocation_params(result)
 
       if geolocation_params[:ip] != ip_address
