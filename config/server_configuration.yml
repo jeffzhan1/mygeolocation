@@ -5,12 +5,15 @@ defaults: &defaults
 
     ipstack:
       api_url: "https://api.ipstack.com/%s?access_key=%s"
-      api_access_key: "b468b901cb7ba1b24176f73d1c86f299"
+      api_access_key: "9a512cc46d662d6aa840d0fc1123ba3a"
       adapter: IpstackAdapter
 
 development:
   <<: *defaults
 
+test:
+  <<: *defaults
+  
 production:
   <<: *defaults
 

@@ -51,7 +51,7 @@ class GeolocationsController < ApplicationController
     if geolocation_params.blank?
       render422_json(
         json_ext: {
-          error_message: "Cannot find geolocation info!"
+          error_message: "Cannot find the geolocation data!"
         }
       )
       return
@@ -87,8 +87,17 @@ class GeolocationsController < ApplicationController
       )
       return
     end
-
+    
     @geolocation = Geolocation.find_by(ip: ip_address)
+
+    if @geolocation.blank?
+      render422_json(
+        json_ext: {
+          error_message: "Cannot find the geolocation data!"
+        }
+      )
+      return
+    end
   end
 
   def destroy
